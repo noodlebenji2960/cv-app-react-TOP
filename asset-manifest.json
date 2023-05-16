@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cv-app-react-top/static/css/main.f60a45cd.css",
-    "main.js": "/cv-app-react-top/static/js/main.5b6198d8.js",
+    "main.css": "/cv-app-react-top/static/css/main.02c3b173.css",
+    "main.js": "/cv-app-react-top/static/js/main.475a11b6.js",
     "static/media/profile-pic.svg": "/cv-app-react-top/static/media/profile-pic.bcf166d9041d49f550b3.svg",
     "static/media/trash-can-outline.svg": "/cv-app-react-top/static/media/trash-can-outline.21bc9ece2178f6e3bb53.svg",
     "static/media/pencil-box.svg": "/cv-app-react-top/static/media/pencil-box.876989336f3e25d9f6c0.svg",
@@ -11,11 +11,11 @@
     "index.html": "/cv-app-react-top/index.html",
     "static/media/format-text.svg": "/cv-app-react-top/static/media/format-text.37450bc4b53422f2d3e8.svg",
     "static/media/format-header-1.svg": "/cv-app-react-top/static/media/format-header-1.67265fabfd0464ed6897.svg",
-    "main.f60a45cd.css.map": "/cv-app-react-top/static/css/main.f60a45cd.css.map",
-    "main.5b6198d8.js.map": "/cv-app-react-top/static/js/main.5b6198d8.js.map"
+    "main.02c3b173.css.map": "/cv-app-react-top/static/css/main.02c3b173.css.map",
+    "main.475a11b6.js.map": "/cv-app-react-top/static/js/main.475a11b6.js.map"
   },
   "entrypoints": [
-    "static/css/main.f60a45cd.css",
-    "static/js/main.5b6198d8.js"
+    "static/css/main.02c3b173.css",
+    "static/js/main.475a11b6.js"
   ]
 }
