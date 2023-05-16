@@ -1,0 +1,375 @@
+:root{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    /*THEME COLOR VARS*/
+    --color-h: 81;
+    --color-s: 50%;
+    --color-l: 41%;
+    --green-color: ;
+    --green-color-10: ;
+
+    --primary-color: hsl(var(--color-h), var(--color-s), var(--color-l));
+    --primary-border-color: hsl(var(--color-h), var(--color-s), calc(var(--color-l) + 5%));
+    --primary-hover-color: hsl(var(--color-h), var(--color-s), calc(var(--color-l) + 35%));
+
+    --header-text-color: #000000;
+}
+
+body{
+    margin: 0px;
+    overflow: scroll;
+}
+
+/*FORM AUTOCOMPLETE STYLES*/
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+/*INPUT PROMPT STYLES*/
+    span{
+        color: var(--primary-color);
+        font-size: 0.8rem;
+        user-select: none;
+        visibility: hidden;
+        position: absolute;
+        width: 100%;
+        bottom: 0%;
+        margin: -17px 0px;
+        display: flex;
+        justify-content: space-between;
+    }
+    span p:only-child{
+        margin-left: auto;
+    }
+
+/*MISC ELE GLOBAL STYLES*/
+    h1, h2, h3, h4, h5, h6{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--header-text-color);
+        margin: -1px;
+        border-top: 1px dotted var(--primary-border-color);
+        border-bottom: 1px dotted var(--primary-border-color);
+        font-weight: 300;
+        background-color: var(--primary-hover-color);
+    }
+    p{
+        margin: 0px;
+        white-space: nowrap;
+    }
+
+    button{
+        cursor: pointer;
+        margin: 5px 0px 5px 0px;
+        z-index: 1;
+    }
+
+    h2 button:hover, input[type="color"]:hover{
+        outline: 3px white solid;
+        outline-offset: -2px;
+        border-radius: 5px;
+    }
+    .generalForm button:hover{
+        outline: 3px var(--primary-hover-color) solid;
+    }
+    input[type="color"]:hover{
+        outline-offset: -5px;
+    }
+
+    button:has(+button){
+        margin: 5px 0px 0px 0px;
+    }
+
+/*BUTTON+ICONS*/
+    .add, .confirm, .edit, .close, .delete{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border-radius: 11.5%;
+        background-color: white;
+        outline: var(--primary-color) 3px solid;
+        outline-offset: -3px;
+        color: transparent;
+    }
+    .add::after, .confirm::after, .edit::after, .close::after, .delete::after{
+        position: absolute;
+        content: "";
+        top: 0px;
+        right: 0px;
+        width: 100%;
+        aspect-ratio: 1/1;
+        background-color: var(--primary-color);
+    }
+    .add::after{
+        -webkit-mask: url("./plus-box.svg") no-repeat center / contain;
+    }
+    .confirm::after{
+        -webkit-mask: url("./confirm-box.svg") no-repeat center / contain;
+    }
+    .edit::after{
+        -webkit-mask: url("./pencil-box.svg") no-repeat center / contain;
+    }
+    .close::after{
+        -webkit-mask: url("./subtract-box.svg") no-repeat center / contain;
+    }
+    .delete::after{
+        -webkit-mask: url("./trash-can-outline.svg") no-repeat center / contain;
+    }
+
+/*FORM AND SECTION GLOBAL*/
+    .educationForm, .generalForm, .practicalForm, .educationSection, .practicalSection{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 0px 0px 25px 0px;
+    }
+
+/*FORM GLOBAL*/
+    form input, form textarea, form select{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1rem;
+        background: none;
+        border: none;
+        border-radius: 5px;
+        resize: none;
+        height: 18px;
+        display: flex;
+        width: 100%;
+        height: 22px;
+    }
+    form div:has(input[type="checkbox"]){
+        display: flex;
+        align-items: center;
+    }
+    form input[type="checkbox"]{
+        width: min-content;
+        height: min-content;
+    }
+    form select{
+        cursor: pointer;
+    }
+    form select option{
+        font-size: smaller;
+    }
+    form div{
+        display: flex;
+        position: relative;
+        width: 81%;
+        gap: 5px;
+    }
+
+    form input:hover, form textarea:hover, form select:hover{
+        background-color: var(--primary-hover-color);
+    }
+    form input:focus, form textarea:focus, form select:focus{
+        border-radius: 4px;
+        outline: var(--primary-border-color) 2px solid;
+        background-color: white;
+    }
+
+/*PRACTICAL AND EDUCATION FORMS*/
+    .educationForm, .practicalForm{
+        display: none;
+        border-bottom: 1px dotted var(--primary-border-color);
+        margin: 15px 0px 0px 15px;
+    }
+
+/*GENERAL FORM*/
+    .generalForm{
+        margin: 15px 0px 0px 15px;
+    }
+    .generalForm div:has(#profilePicPreview){
+        height: 180px;
+        width: 180px;
+        min-width: 180px;
+        position: relative;
+    }
+    #profilePicPreview img{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        content: "";
+        object-fit: cover;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: var(--primary-hover-color);
+        outline: 4px solid var(--primary-hover-color);
+        outline-offset: -2px;
+    }
+    #profilePicPreview img::after{
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        height: 180px;
+        width: 180px;
+        -webkit-mask: url("./profile-pic.svg") no-repeat center / contain;
+        background-color: white;
+        z-index: 1;
+    }
+
+    #profilePicPreview img:hover{
+        outline: 4px solid var(--primary-border-color);
+        outline-offset: -2px;
+    }
+
+    input[type="file"]{
+        display: none;
+    }
+
+    .generalForm{
+        flex-direction: row;
+    }
+    #nameInput{
+        font-size: 1.4rem;
+    }
+    .generalForm > div:nth-child(3){
+        flex-direction: column;
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .generalForm select option:first-child{
+        display: none;
+    }
+
+/*SECTIONS*/
+    .educationSection, .practicalSection{
+        margin: 15px -1px 0px 15px;
+        border-bottom: 1px dotted var(--primary-border-color);
+    }
+    .educationSection:hover div:nth-child(1):has(button), .practicalSection:hover div:nth-child(1):has(button){
+        display:flex;
+        flex-direction: column;
+        width: 30px;
+        align-items: end;
+    }
+
+    /*disable inputs*/
+    .educationSection input, .practicalSection input{
+        pointer-events: none;
+    }
+    /*hide elements*/
+    .educationSection input[type="checkbox"], .practicalSection input[type="checkbox"]{
+        display: none;
+    }
+    .educationSection.editable input[type="checkbox"], .practicalSection.editable input[type="checkbox"]{
+        display: block;
+    }
+    .educationSection div:nth-child(1):has(button), .practicalSection div:nth-child(1):has(button){
+        display:none;
+    }
+
+/*SIDE BUTTONS*/
+    .generalForm button, .educationSection div:has(button), .educationForm div:has(button), .practicalSection div:has(button), .practicalForm div:has(button), h2 button{
+        position: absolute;
+        right: 10px;
+        bottom: 1.5px;
+        display: flex;
+        width: min-content;
+        flex-direction: column;
+        width: 30px;
+    }
+
+/*SUBMITTED CLASS*/
+    .submitted input:invalid, .submitted textarea:invalid, .submitted select:invalid{
+        outline:1px solid red;
+    }
+
+    .submitted input:valid, .submitted textarea:valid, .submitted select:valid{
+        outline:1px solid var(--primary-border-color);
+    }
+
+    .submitted input:invalid+span, .submitted textarea:invalid+span, .submitted select:invalid+span{
+        display: flex;
+        color: red;
+    }
+
+/*GENERAL FORM UNEDITABLE CLASS*/
+    .generalForm.uneditable input, .uneditable textarea, .uneditable select{
+        pointer-events: none;
+        appearance: none;
+    }
+    .generalForm.uneditable button{
+        display: none;
+    }
+    .generalForm:hover button{
+        display: block;
+    }
+
+/*EDITABLE CLASS*/
+    .editable input, .editable textarea, .editable select{
+        outline: var(--primary-border-color) 1px solid;
+        outline-offset: -1px;
+        pointer-events: all;
+    }
+
+    .generalForm select{
+        color: #757575;
+    }
+
+/*STYLES TOOLBAR*/
+    #colorPick1, #colorPick2{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    #colorPick1::after, #colorPick2::after{
+        position: absolute;
+        content: "";
+        top: 20%;
+        right: 20%;
+        width: 60%;
+        height: 60%;
+        background-color: white;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .stylesBar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #colorPick1::after{
+        -webkit-mask: url("./format-header-1.svg") no-repeat center / contain;
+    }
+
+    #colorPick2::after{
+        -webkit-mask: url("./format-text.svg") no-repeat center / contain;
+    }
+
+    .stylesBar div{
+        background-color: var(--primary-color);
+        width: min-content;
+        height: 20px;
+        padding: 5px;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin: 0px 5px 0px 5px;
+        border-radius: 3px;
+    }
+
+    .stylesBar div:hover{
+        outline: 3px solid white;
+    }
+
+    @media print {
+        @page { margin: 0; }
+        body { margin: 1.6cm; }
+      }
